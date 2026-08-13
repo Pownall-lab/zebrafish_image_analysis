@@ -15,3 +15,48 @@ The repository currently contains two primary workflows:
    - U-Net-based segmentation
    - Chromatin occupancy analysis
    - Autocorrelation analysis
+
+## Environment setup
+
+The analysis was developed using Python 3.11. Create and activate a virtual environment from the repository directory:
+
+```bash
+python3.11 -m venv .venv
+source .venv/bin/activate
+
+python -m pip install --upgrade pip
+```
+
+Install PyTorch and torchvision:
+
+```bash
+python -m pip install torch torchvision
+```
+
+For NVIDIA GPU support, use the installation command recommended for your system by the [PyTorch installation guide](https://pytorch.org/get-started/locally/).
+
+Then install the remaining dependencies:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+GPU acceleration is recommended for Cellpose segmentation and U-Net training and inference, although other analysis steps can run on a CPU.
+
+## Tested configuration
+
+The code was tested with:
+
+- Linux
+- Python 3.11.2
+- PyTorch 2.11.0 with CUDA 13.0
+- torchvision 0.26.0
+- Cellpose 4.0.5
+- 64-core AMD Ryzen Threadripper
+- 256 GB RAM
+- NVIDIA GeForce RTX 4090 with 24 GB VRAM
+- NVIDIA RTX PRO 5000 Blackwell with 48 GB VRAM
+
+These specifications describe the system used for development and analysis; they are not minimum requirements. The scripts normally use one GPU per process rather than combining the memory of both GPUs.
+
+Systems with less memory may require a smaller training batch size, fewer parallel workers, or processing fewer images simultaneously.
