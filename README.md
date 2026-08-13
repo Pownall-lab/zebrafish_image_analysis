@@ -18,7 +18,7 @@ The repository currently contains two primary workflows:
   
 Trained models are available at https://zenodo.org/records/21923246
 
-##Model applicability: 
+## Model applicability: 
 
 These models were trained and validated using images generated in the Pownall Lab with a single imaging system and specific acquisition settings, sample preparations, and labeling conditions. Performance has not been systematically evaluated on data acquired using other instruments or experimental conditions.
 
