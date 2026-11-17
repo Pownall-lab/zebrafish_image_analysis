@@ -1979,7 +1979,7 @@ def compute_texture_features_for_label(
     angles=(0, np.pi/4, np.pi/2, 3*np.pi/4),
     smooth_sigma: float = 1.0,
 ):
-     """
+    """
     Compute texture features for a single 3D nucleus.
 
     The function calculates:
